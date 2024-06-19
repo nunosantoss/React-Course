@@ -1,7 +1,4 @@
 import image from "./assets/react-core-concepts.png";
-import componentImage from "./assets/components.png";
-import configImage from "./assets/config.png";
-import jsxImage from "./assets/jsx-ui.png";
 import { CORE_CONCEPTS } from "./data";
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
