@@ -2,7 +2,7 @@ import { useState } from "react";
 import ConceptsList from "./components/Concepts/ConceptsList";
 import Header from "./components/Header/Header";
 import TabButton from "./components/TabButton/TabButton";
-import { EXAMPLES } from "./data";
+import { EXAMPLES, MENU_BUTTONS } from "./data";
 
 function App() {
   const [topic, setTopic] = useState(null);
@@ -22,12 +22,11 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton isSelected={topic === 'components'} onSelect={() => handleSelect("components")}>
-              COMPONENTS
+          {MENU_BUTTONS.map((button) => (
+            <TabButton key={button.name} isSelected={topic === button.name} onSelect={() => handleSelect(button.name)}>
+            {button.name}            
             </TabButton>
-            <TabButton isSelected={topic === 'jsx'} onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-            <TabButton isSelected={topic === 'props'} onSelect={() => handleSelect("props")}>Props</TabButton>
-            <TabButton isSelected={topic === 'state'} onSelect={() => handleSelect("state")}>State</TabButton>
+          ))}
           </menu>
           <div id="tab-content">
             {!topic ? (
@@ -37,7 +36,9 @@ function App() {
                 <h3>{EXAMPLES[topic].title}</h3>
                 <p>{EXAMPLES[topic].description}</p>
                 <pre>
-                  <code></code>
+                  <code>
+                    {EXAMPLES[topic].code}
+                  </code>
                 </pre>
               </>
             )}
