@@ -1,6 +1,10 @@
-import { CORE_CONCEPTS } from "./data";
+import ConceptsList from './components/Concepts/ConceptsList';
 import Header from './components/Header/Header'
-import Concepts from './components/Concepts/Concepts'
+import TabButton from "./components/TabButton/TabButton";
+
+function handleSelect(){
+  console.log("Hello World!")
+}
 
 function App() {
   return (
@@ -9,11 +13,17 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Time to get started!</h2>
-          <ul>
-            {CORE_CONCEPTS.map((concept) => (
-                <Concepts key={concept.title} {...concept} />
-            ))}
-          </ul>
+          <ConceptsList/>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={handleSelect}>COMPONENTS</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
+          </menu>
+          Dynamic Content
         </section>
       </main>
     </div>
