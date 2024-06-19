@@ -1,5 +1,8 @@
-import image from './assets/react-core-concepts.png'
-
+import image from "./assets/react-core-concepts.png";
+import componentImage from "./assets/components.png";
+import configImage from "./assets/config.png";
+import jsxImage from "./assets/jsx-ui.png";
+import { CORE_CONCEPTS } from "./data";
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
 function generateRandom(max) {
@@ -21,12 +24,29 @@ function Header() {
   );
 }
 
+function Concepts(props) {
+  return (
+    <li>
+      <img src={props.image} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Time to get started!</h2>
+          <ul>
+            {CORE_CONCEPTS.map((concept) => (
+                <Concepts key={concept.title} {...concept} />
+            ))}
+          </ul>
+        </section>
       </main>
     </div>
   );
