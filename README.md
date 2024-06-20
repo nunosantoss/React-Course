@@ -6,7 +6,7 @@ My goal is to expand my knowledge in the world of React and improve every day!
 
 ##
 
-**Modules / Sections:**
+### Modules / Sections:
 
 - [x] 1. Getting Started
 - [x] 2. JavaScript Refresher
