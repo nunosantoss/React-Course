@@ -1,21 +1,20 @@
-import reactImg from '../../assets/react-core-concepts.png';
-import './Header.css';
+const reactDescriptions = ["Fundamental", "Crucial", "Core"];
+import image from "../../assets/react-core-concepts.png";
+import './Header.css'
 
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-
-function genRandomInt(max) {
+function generateRandom(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
 export default function Header() {
-  const description = reactDescriptions[genRandomInt(2)];
+  const dynamicMessage = reactDescriptions[generateRandom(2)];
 
   return (
     <header>
-      <img src={reactImg} alt="Stylized atom" />
+      <img src={image} alt="Stylized atom" />
       <h1>React Essentials</h1>
       <p>
-        {description} React concepts you will need for almost any app you are
+        {dynamicMessage} React concepts you will need for almost any app you are
         going to build!
       </p>
     </header>

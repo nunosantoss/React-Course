@@ -80,3 +80,10 @@ function Counter() {
 }`,
   },
 };
+
+export const MENU_BUTTONS =[
+  { name: 'components', text: 'Components'},
+  { name: 'jsx', text: 'JSX' },
+  { name: 'props', text: 'Props'},
+  { name: 'state', text: 'State'}
+]
